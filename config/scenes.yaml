@@ -1,0 +1,192 @@
+- id: '1610994719610'
+  name: Theater Mode
+  entities:
+    light.desk_lights:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - random
+      - colorloop
+      entity_id:
+      - light.desk_color_lamp_1
+      - light.desk_white_lamp_1
+      - light.desk_white_lamp_2
+      friendly_name: Desk Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'off'
+    light.dining_table_lights:
+      friendly_name: Dining Table Lights
+      supported_features: 0
+      state: 'off'
+    light.string_lights:
+      friendly_name: String Lights
+      supported_features: 0
+      state: 'on'
+    light.tv_lights:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - random
+      - colorloop
+      brightness: 26
+      color_temp: 300
+      effect: none
+      entity_id:
+      - light.tv_color_lamp_2
+      - light.tv_color_lamp_3
+      friendly_name: TV Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'on'
+    light.bed_color_lamp_4:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 26
+      color_temp: 301
+      effect: none
+      friendly_name: Bed color lamp 4
+      supported_features: 63
+      state: 'on'
+    input_boolean.sync_what_s_playing_to_lights:
+      editable: true
+      friendly_name: Sync What's Playing to Lights?
+      icon: mdi:palette
+      state: 'on'
+  icon: mdi:filmstrip
+- id: '1610994765804'
+  name: Full On
+  entities:
+    light.studio_lights:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - random
+      - colorloop
+      brightness: 255
+      hs_color:
+      - 38.438
+      - 50.196
+      rgb_color:
+      - 255
+      - 209
+      - 127
+      xy_color:
+      - 0.45
+      - 0.406
+      effect: none
+      entity_id:
+      - light.bed_color_lamp_4
+      - light.desk_color_lamp_1
+      - light.desk_white_lamp_1
+      - light.desk_white_lamp_2
+      - light.string_lights
+      - light.dining_table_lights
+      - light.tv_color_lamp_2
+      - light.tv_color_lamp_3
+      friendly_name: Studio Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'on'
+    input_boolean.sync_what_s_playing_to_lights:
+      editable: true
+      friendly_name: Sync What's Playing to Lights?
+      icon: mdi:palette
+      state: 'off'
+  icon: mdi:lightbulb-on-outline
+- id: '1610994787395'
+  name: Full Off
+  entities:
+    light.studio_lights:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - random
+      - colorloop
+      entity_id:
+      - light.bed_color_lamp_4
+      - light.desk_color_lamp_1
+      - light.desk_white_lamp_1
+      - light.desk_white_lamp_2
+      - light.string_lights
+      - light.dining_table_lights
+      - light.tv_color_lamp_2
+      - light.tv_color_lamp_3
+      friendly_name: Studio Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'off'
+    input_boolean.sync_what_s_playing_to_lights:
+      editable: true
+      friendly_name: Sync What's Playing to Lights?
+      icon: mdi:palette
+      state: 'off'
+  icon: mdi:lightbulb-off-outline
+- id: '1610994850307'
+  name: Daytime Work
+  entities:
+    light.desk_lights:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - random
+      - colorloop
+      brightness: 234
+      hs_color:
+      - 38.438
+      - 50.196
+      rgb_color:
+      - 255
+      - 209
+      - 127
+      xy_color:
+      - 0.45
+      - 0.406
+      effect: none
+      entity_id:
+      - light.desk_color_lamp_1
+      - light.desk_white_lamp_1
+      - light.desk_white_lamp_2
+      friendly_name: Desk Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'on'
+    light.bed_color_lamp_4:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Bed color lamp 4
+      supported_features: 63
+      state: 'off'
+    light.string_lights:
+      friendly_name: String Lights
+      supported_features: 0
+      state: 'off'
+    light.tv_lights:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - random
+      - colorloop
+      entity_id:
+      - light.tv_color_lamp_2
+      - light.tv_color_lamp_3
+      friendly_name: TV Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'off'
+    light.dining_table_lights:
+      friendly_name: Dining Table Lights
+      supported_features: 0
+      state: 'off'
+    input_boolean.sync_what_s_playing_to_lights:
+      editable: true
+      friendly_name: Sync What's Playing to Lights?
+      icon: mdi:palette
+      state: 'off'
+  icon: mdi:briefcase-outline

@@ -1,1 +1,104 @@
-[]
+- id: '1610995356034'
+  alias: NFC Trigger Work Mode
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 71b6070f-114d-41ca-ac47-f6629ad9c80a
+  condition: []
+  action:
+  - scene: scene.daytime_work
+  mode: single
+- id: '1610995484499'
+  alias: NFC Studio Lights On
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: a4130791-00ab-4279-99ee-f741ab994ab8
+  condition:
+  - condition: state
+    entity_id: light.studio_lights
+    state: 'off'
+  action:
+  - scene: scene.full_on
+  mode: single
+- id: '1610995512943'
+  alias: NFC Studio Lights Off
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: a4130791-00ab-4279-99ee-f741ab994ab8
+  condition:
+  - condition: state
+    entity_id: light.studio_lights
+    state: 'on'
+  action:
+  - scene: scene.full_off
+  mode: single
+- id: '1610995679644'
+  alias: Leaving Home
+  description: ''
+  trigger:
+  - platform: zone
+    entity_id: person.sanjit
+    zone: zone.home
+    event: leave
+  condition: []
+  action:
+  - scene: scene.full_off
+  mode: single
+- id: '1610995780479'
+  alias: Arriving Home
+  description: ''
+  trigger:
+  - platform: zone
+    entity_id: person.sanjit
+    zone: zone.home
+    event: enter
+  condition:
+  - condition: or
+    conditions:
+    - condition: sun
+      before: sunrise
+      before_offset: 01:00
+    - condition: sun
+      after: sunset
+      after_offset: -01:00
+  action:
+  - scene: scene.full_on
+  mode: single
+- id: '1610995829321'
+  alias: Lights at Sunset
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -01:00
+  condition:
+  - condition: zone
+    entity_id: person.sanjit
+    zone: zone.home
+  action:
+  - scene: scene.full_on
+  mode: single
+
+- alias: Play/Pause
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionID: B91EABEE-70BF-49E4-9CA3-C2E2DE46F13C
+  action:
+    service: media_player.media_play_pause
+    entity_id: all
+
+- alias: Toggle Color Sync
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionID: A44D7955-1E67-483A-AD6E-DCEEE3B1D055
+  action:
+    service: input_boolean.toggle
+    entity_id: input_boolean.sync_what_s_playing_to_lights
