@@ -2,6 +2,9 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+frontend:
+    themes: !include_dir_merge_named themes
+
 # Text to speech
 tts:
   - platform: google_translate
@@ -11,6 +14,10 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-http:
-  ssl_certificate: /config/certs/fullchain.pem
-  ssl_key: /config/certs/privkey.pem
+# http:
+#   ssl_certificate: /config/certs/fullchain.pem
+#   ssl_key: /config/certs/privkey.pem
+
+spotify:
+  client_id: !secret SPOTIFY_CLIENT_ID
+  client_secret: !secret SPOTIFY_CLIENT_SECRET
