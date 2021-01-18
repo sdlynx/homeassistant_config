@@ -19,5 +19,38 @@ scene: !include scenes.yaml
 #   ssl_key: /config/certs/privkey.pem
 
 spotify:
-  client_id: !secret SPOTIFY_CLIENT_ID
-  client_secret: !secret SPOTIFY_CLIENT_SECRET
+    client_id: !secret SPOTIFY_CLIENT_ID
+    client_secret: !secret SPOTIFY_CLIENT_SECRET
+
+recorder:
+    purge_keep_days: 2
+
+light:
+  - platform: switch
+    name: Dining Table Lights
+    entity_id: switch.dining_table_lights
+  - platform: switch
+    name: String Lights
+    entity_id: switch.string_lights
+  - platform: group
+    name: Studio Lights
+    entities:
+      - light.bed_color_lamp_4
+      - light.desk_color_lamp_1
+      - light.desk_white_lamp_1
+      - light.desk_white_lamp_2
+      - light.string_lights
+      - light.dining_table_lights
+      - light.tv_color_lamp_2
+      - light.tv_color_lamp_3
+  - platform: group
+    name: Desk Lights
+    entities:
+      - light.desk_color_lamp_1
+      - light.desk_white_lamp_1
+      - light.desk_white_lamp_2
+  - platform: group
+    name: TV Lights
+    entities:
+      - light.tv_color_lamp_2
+      - light.tv_color_lamp_3
