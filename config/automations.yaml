@@ -45,6 +45,9 @@
   condition: []
   action:
   - scene: scene.full_off
+  - service: media_player.media_pause
+    data: {}
+    entity_id: all
   mode: single
 - id: '1610995780479'
   alias: Arriving Home
@@ -59,10 +62,10 @@
     conditions:
     - condition: sun
       before: sunrise
-      before_offset: 01:00
+      before_offset: 00:45
     - condition: sun
       after: sunset
-      after_offset: -01:00
+      after_offset: -00:45
   action:
   - scene: scene.full_on
   mode: single
@@ -72,7 +75,7 @@
   trigger:
   - platform: sun
     event: sunset
-    offset: -01:00
+    offset: -00:45
   condition:
   - condition: zone
     entity_id: person.sanjit
@@ -80,7 +83,6 @@
   action:
   - scene: scene.full_on
   mode: single
-
 - alias: Play/Pause
   description: ''
   trigger:
@@ -91,7 +93,6 @@
   action:
     service: media_player.media_play_pause
     entity_id: all
-
 - alias: Toggle Color Sync
   description: ''
   trigger:
