@@ -1,20 +1,6 @@
 - id: '1610994719610'
   name: Theater Mode
   entities:
-    light.desk_lights:
-      min_mireds: 153
-      max_mireds: 500
-      effect_list:
-      - random
-      - colorloop
-      entity_id:
-      - light.desk_color_lamp_1
-      - light.desk_white_lamp_1
-      - light.desk_white_lamp_2
-      friendly_name: Desk Lights
-      icon: mdi:lightbulb-group
-      supported_features: 63
-      state: 'off'
     light.dining_table_lights:
       friendly_name: Dining Table Lights
       supported_features: 0
@@ -27,10 +13,19 @@
       min_mireds: 153
       max_mireds: 500
       effect_list:
-      - random
       - colorloop
+      - random
       brightness: 26
-      color_temp: 300
+      hs_color:
+      - 180.426
+      - 47.059
+      rgb_color:
+      - 134
+      - 254
+      - 255
+      xy_color:
+      - 0.205
+      - 0.337
       effect: none
       entity_id:
       - light.tv_color_lamp_2
@@ -46,7 +41,16 @@
       - colorloop
       - random
       brightness: 26
-      color_temp: 301
+      hs_color:
+      - 321.724
+      - 22.745
+      rgb_color:
+      - 255
+      - 197
+      - 234
+      xy_color:
+      - 0.363
+      - 0.286
       effect: none
       friendly_name: Bed color lamp 4
       supported_features: 63
@@ -55,6 +59,35 @@
       editable: true
       friendly_name: Sync What's Playing to Lights?
       icon: mdi:palette
+      state: 'on'
+    light.desk_white_lamp_1:
+      friendly_name: Desk white lamp 1
+      supported_features: 41
+      state: 'off'
+    light.desk_white_lamp_2:
+      friendly_name: Desk white lamp 2
+      supported_features: 41
+      state: 'off'
+    light.desk_color_lamp_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 26
+      hs_color:
+      - 73.125
+      - 12.549
+      rgb_color:
+      - 248
+      - 255
+      - 223
+      xy_color:
+      - 0.336
+      - 0.364
+      effect: none
+      friendly_name: Desk color lamp 1
+      supported_features: 63
       state: 'on'
   icon: mdi:filmstrip
 - id: '1610994765804'
@@ -190,3 +223,110 @@
       icon: mdi:palette
       state: 'off'
   icon: mdi:briefcase-outline
+- id: '1619984401301'
+  name: Party
+  entities:
+    light.bed_color_lamp_4:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 229.859
+      - 27.843
+      rgb_color:
+      - 184
+      - 196
+      - 255
+      xy_color:
+      - 0.264
+      - 0.258
+      effect: none
+      friendly_name: Bed color lamp 4
+      supported_features: 63
+      state: 'on'
+    light.desk_color_lamp_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 220.435
+      - 36.078
+      rgb_color:
+      - 163
+      - 193
+      - 255
+      xy_color:
+      - 0.241
+      - 0.251
+      effect: none
+      friendly_name: Desk color lamp 1
+      supported_features: 63
+      state: 'on'
+    light.desk_white_lamp_1:
+      friendly_name: Desk white lamp 1
+      supported_features: 41
+      state: 'off'
+    light.desk_white_lamp_2:
+      friendly_name: Desk white lamp 2
+      supported_features: 41
+      state: 'off'
+    switch.dining_table_lights:
+      friendly_name: 'Dining Table Lights '
+      state: 'off'
+    light.tv_color_lamp_2:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 228.791
+      - 35.686
+      rgb_color:
+      - 164
+      - 181
+      - 255
+      xy_color:
+      - 0.245
+      - 0.236
+      effect: none
+      friendly_name: TV color lamp 2
+      supported_features: 63
+      state: 'on'
+    light.tv_color_lamp_3:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 339.871
+      - 60.784
+      rgb_color:
+      - 255
+      - 100
+      - 152
+      xy_color:
+      - 0.511
+      - 0.267
+      effect: none
+      friendly_name: TV color lamp 3
+      supported_features: 63
+      state: 'on'
+    switch.string_lights:
+      friendly_name: String Lights
+      state: unavailable
+    input_boolean.sync_what_s_playing_to_lights:
+      editable: true
+      friendly_name: Sync What's Playing to Lights?
+      icon: mdi:palette
+      state: 'on'
+  icon: mdi:cake
