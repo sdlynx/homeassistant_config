@@ -71,3 +71,8 @@ sensor:
     resource: http://10.0.0.161:1111/noise.html
     select: "span"
     name: "AC Noise"
+  - platform: template
+    sensors:
+      ac_noise_bool:
+        name: "AC Noise (Boolean)"
+        value_template: "{{ states('sensor.ac_noise') | float > 1.5 }}"
