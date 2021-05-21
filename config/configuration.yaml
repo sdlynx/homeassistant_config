@@ -61,5 +61,13 @@ homeassistant:
 
 camera:
   - platform: mjpeg
-    mjpeg_url: http://picam:opensesame@10.0.0.161/cam_pic_new.php
-    name: “Front Door”
+    mjpeg_url: http://10.0.0.161:8081/cam_pic_new.php
+    username: "picam"
+    password: "opensesame"
+    name: "Window"
+
+sensor:
+  - platform: scrape
+    resource: http://10.0.0.161:1111/noise.html
+    select: "span"
+    name: "AC Noise"
