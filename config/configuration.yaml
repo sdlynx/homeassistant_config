@@ -74,5 +74,11 @@ sensor:
   - platform: template
     sensors:
       ac_noise_bool:
-        name: "AC Noise (Boolean)"
         value_template: "{{ states('sensor.ac_noise') | float > 1.5 }}"
+        friendly_name: "AC Noise (Boolean)"
+      living_room_tv_cc_volume:
+        value_template: "{{ state_attr('media_player.living_room_tv', 'volume_level') | float }}"
+        friendly_name: "Living Room TV Chromecast (Volume)"
+      bedroom_speaker_volume:
+        value_template: "{{ state_attr('media_player.bedroom_speaker', 'volume_level') | float }}"
+        friendly_name: "Bedroom Speaker (Volume)"
